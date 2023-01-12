@@ -30,7 +30,7 @@
         }
     </style>
 </head>
-<body>
+<body id="body">
     <div id="paragraph" class="text-center col-lg-5" style="margin-bottom:4px">
         <h2 id="watchNothing" class="text-center">看什么看，这是给你看的嘛？</h2>
         <h3 id="typeword" class="text-left"></h3>
@@ -121,6 +121,44 @@
                 return "rgb("+(241)+","+(158)+","+(194)+")";
 			}
 		})(window,document);
+    </script>
+    <!-- 点击屏幕 (在一起的天数) 次后跳转 -->
+    <script>
+        window.onload = (function(){
+                var demo = document.getElementById("body");
+                var click_count = 0
+                demo.onclick=function(){
+                    click_count = click_count + 1;
+                    var new_date = new Date(); //新建一个日期对象，默认现在的时间
+	                var old_date = new Date("2022-12-30 00:00:00"); //设置过去的一个时间点，"yyyy-MM-dd HH:mm:ss"格式化日期
+	                var difftime = (new_date - old_date)/1000; // 秒数
+                    var diffday = parseInt(difftime/86400);
+                    if (click_count == diffday){
+                        var question1 = "%u6211%u4EEC%u662F%u4EC0%u4E48%u65F6%u5019%u5728%u4E00%u8D77%u7684%u5462%uFF1F";
+                        var together = prompt(unescape(question1));
+                        var answer1 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022-12-30%u5728%u4E00%u8D77%u7684";
+                        var answer2 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022/12/30%u5728%u4E00%u8D77%u7684";
+                        var answer3 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022%u5E7412%u670830%u5728%u4E00%u8D77%u7684";
+                        var answer4 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022.12.30%u5728%u4E00%u8D77%u7684";
+                        if (together == unescape(answer1) | together == unescape(answer2) | together == unescape(answer3) | together == unescape(answer4)){
+                            window.location = "./love.html";
+                        }else{
+                            var question2 = "%u7B54%u9519%u4E86%uFF1F%u90A3%u4F60%u5C31%u62CD%u4E00%u62CD%u6211%u770B%u770B%u6211%u8BF4%u4E86%u4EC0%u4E48%u5427";
+                            var answer = prompt(unescape(question2));
+                            if (answer == unescape("%u5218%u5FB7%u534E%u662F%u60A6%u6B23%u5B9D%u7684%u5B9D")){
+                                window.location = "./love.html";
+                            }else{
+                                alert(unescape("%u54FC%uFF0C%u4F60%u4E2A%u9A97%u5B50%uFF0C%u4E0D%u662F%u6211%u7684%u5B9D%uFF01"));
+                                if (prompt(unescape("%u6700%u540E%u4E00%u4E2A%u673A%u4F1A%u54E6%uFF0C%u8BF4%u6211%u662F%u4F60%u7684%u5565%uFF1A")) == unescape("%u5927%u5B9D")){
+                                    window.location = "./love.html";
+                                }else{
+                                    alert(unescape("%u62DC%u62DC%u4E86%u60A8%u5450%uFF01"));
+                                }
+                            }
+                        }
+                    }
+                }
+            })();
     </script>
 </body>
 </html>
