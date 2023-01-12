@@ -1,12 +1,126 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- jQuery and JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
     <title>A Romance for My lover</title>
+    <style>
+        body {
+        /* background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%); */
+        /* background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); */
+            background-color: azure;
+        }
+        div#paragraph {
+            margin-top: 80px;
+            margin-right: 10px;
+            margin-left: 10px;
+            margin-bottom: 20px;
+            font-family: LiSu;
+            background: url(背景竹叶.webp) no-repeat;
+            background-position: 180px -20px;
+        }
+        h2#watchNothing {
+            margin-bottom: 50px;
+        }
+    </style>
 </head>
 <body>
-    <p>This is a romance page for my lover!</p>
+    <div id="paragraph" class="text-center col-lg-5" style="margin-bottom:4px">
+        <h2 id="watchNothing" class="text-center">看什么看，这是给你看的嘛？</h2>
+        <h3 id="typeword" class="text-left"></h3>
+    </div>
+    <!-- 打字机效果 -->
+    <script>
+        var str = '这是给我的宝看的，你是我的宝嘛？<br/>是？<br/>真的嘛？<br/>我不信。<br/>除非你点击屏幕。<br/>然后就一个爱心啦 <br/> ❤❤❤❤❤❤❤❤❤<br/>要一直点哦，然后滑到最后啦！<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>你真以为还有啥呢？没有啦';
+        var i = 0;
+        function typing(){
+          var divTyping = document.getElementById('typeword');
+          if (i <= str.length) {
+            divTyping.innerHTML = str.slice(0, i++) + '_';
+            setTimeout('typing()', 100);
+          }
+          else{
+            divTyping.innerHTML = str;
+          }
+        }
+        typing()
+    </script>
+    <!-- 鼠标点击出现爱心特效 -->
+    <script>
+        //鼠标点击出现爱心特效
+		(function(window,document,undefined){
+			var hearts = [];
+			window.requestAnimationFrame = (function(){
+				return window.requestAnimationFrame ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function (callback){
+					setTimeout(callback,1000/60);
+				}
+			})();
+			init();
+			function init(){
+				css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+				attachEvent();
+				gameloop();
+			}
+			function gameloop(){
+				for(var i=0;i<hearts.length;i++){
+					if(hearts[i].alpha <=0){
+						document.body.removeChild(hearts[i].el);
+						hearts.splice(i,1);
+						continue;
+					}
+					hearts[i].y--;
+					hearts[i].scale += 0.004;
+					hearts[i].alpha -= 0.013;
+					hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
+				}
+				requestAnimationFrame(gameloop);
+			}
+			function attachEvent(){
+				var old = typeof window.onclick==="function" && window.onclick;
+				window.onclick = function(event){
+					old && old();
+					createHeart(event);
+				}
+			}
+			function createHeart(event){
+				var d = document.createElement("div");
+				d.className = "heart";
+				hearts.push({
+					el : d,
+					x : event.clientX - 5,
+					y : event.clientY - 5,
+					scale : 1,
+					alpha : 1,
+					color : randomColor()
+				});
+				document.body.appendChild(d);
+			}
+			function css(css){
+				var style = document.createElement("style");
+				style.type="text/css";
+				try{
+					style.appendChild(document.createTextNode(css));
+				}catch(ex){
+					style.styleSheet.cssText = css;
+				}
+				document.getElementsByTagName('head')[0].appendChild(style);
+			}
+			function randomColor(){
+				// return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+                return "rgb("+(241)+","+(158)+","+(194)+")";
+			}
+		})(window,document);
+    </script>
 </body>
 </html>
