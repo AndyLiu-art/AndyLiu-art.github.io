@@ -33,6 +33,14 @@
             font-size: 25px;
             margin-top: 50px;
         }
+        div.dropdown {
+            margin-top: 50px;
+            margin-left: 30px;
+            font-family: LiSu;
+        }
+        a.dropdown-item {
+            font-size: 18px;
+        }
     </style>
 </head>
 <body id="body">
@@ -50,7 +58,7 @@
           var divTyping = document.getElementById('typeword');
           if (i <= str.length) {
             divTyping.innerHTML = str.slice(0, i++) + '_';
-            setTimeout('typing()', 100);
+            setTimeout('typing()', 10);
           }
           else{
             divTyping.innerHTML = str;
@@ -143,94 +151,182 @@
                     console.log(diffday);
                     console.log(click_count);
                     if (click_count == diffday){
-                        // var question1 = "%u6211%u4EEC%u662F%u4EC0%u4E48%u65F6%u5019%u5728%u4E00%u8D77%u7684%u5462%uFF1F";
-                        // var together = prompt(unescape(question1));
-                        // var answer1 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022-12-30%u5728%u4E00%u8D77%u7684";
-                        // var answer2 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022/12/30%u5728%u4E00%u8D77%u7684";
-                        // var answer3 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022%u5E7412%u670830%u5728%u4E00%u8D77%u7684";
-                        // var answer4 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022.12.30%u5728%u4E00%u8D77%u7684";
-                        // if (together == unescape(answer1) | together == unescape(answer2) | together == unescape(answer3) | together == unescape(answer4)){
-                        //     window.location.href = "./love.html";
-                        // }else{
-                        //     var question2 = "%u7B54%u9519%u4E86%uFF1F%u90A3%u4F60%u5C31%u62CD%u4E00%u62CD%u6211%u770B%u770B%u6211%u8BF4%u4E86%u4EC0%u4E48%u5427";
-                        //     var answer = prompt(unescape(question2));
-                        //     if (answer == unescape("%u5218%u5FB7%u534E%u662F%u60A6%u6B23%u5B9D%u7684%u5B9D")){
-                        //         window.location.href = "./love.html";
-                        //     }else{
-                        //         alert(unescape("%u54FC%uFF0C%u4F60%u4E2A%u9A97%u5B50%uFF0C%u4E0D%u662F%u6211%u7684%u5B9D%uFF01"));
-                        //         var last_answer = prompt(unescape("%u6700%u540E%u4E00%u4E2A%u673A%u4F1A%u54E6%uFF0C%u8BF4%u6211%u662F%u4F60%u7684%u5565%uFF1A"));
-                        //         if (last_answer == unescape("%u5927%u5B9D")){
-                        //             window.location.href = "./love.html";
-                        //         }else{
-                        //             alert(unescape("%u62DC%u62DC%u4E86%u60A8%u5450%uFF01"));
-                        //         }
-                        //     }
-                        // }
                         // 生成div - container
                         var containerdiv = document.getElementById("alldiv");
-                        var div = document.createElement("div");
-                        div.className = "container";
-                        containerdiv.appendChild(div);
-                        // 生成form标签
-                        var form = document.createElement("form");
-                        form.className = "col-lg-12";
-                        div.appendChild(form);
-                        // 生成子div1标签
-                        var divchild1 = document.createElement("div");
-                        divchild1.className = "form-group";
-                        form.appendChild(divchild1);
-                        // 生成子label1标签
-                        var label1 = document.createElement("label");
-                        label1.setAttribute("for", "formGroupExampleInput");
-                        label1.innerText = unescape("%u6211%u4EEC%u662F%u4EC0%u4E48%u65F6%u5019%u5728%u4E00%u8D77%u7684%u5462%uFF1F");
-                        divchild1.appendChild(label1);
-                        // 生成子input1标签
-                        var input1 = document.createElement("input");
-                        input1.setAttribute("type", "text");
-                        input1.setAttribute("placeholder", "");
-                        input1.setAttribute("id", "formGroupExampleInput");
-                        input1.className = "form-control";
-                        divchild1.appendChild(input1);
-                        // 生成提交表单
-                        var submit = document.createElement("button")
-                        submit.setAttribute("type", "submit");
-                        submit.setAttribute("id", "button");
-                        submit.className = "btn btn-primary";
-                        submit.innerText = "填好啦！";
-                        form.appendChild(submit);
-                        submit.onclick = function(){
-                            var answer1 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022-12-30%u5728%u4E00%u8D77%u7684";
-                            var answer2 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022/12/30%u5728%u4E00%u8D77%u7684";
-                            var answer3 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022%u5E7412%u670830%u5728%u4E00%u8D77%u7684";
-                            var answer4 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022.12.30%u5728%u4E00%u8D77%u7684";
-                            if (input1.value == unescape(answer1) | input1.value == unescape(answer2) | input1.value == unescape(answer3) | input1.value == unescape(answer4)){
-                                window.location.href = "./love.html";
-                                return false;
-                            }else{
-                                form.removeChild(divchild1);
+                        // 下拉列表
+                        var dropdownselect = document.createElement("div");
+                        dropdownselect.className = "dropdown";
+                        containerdiv.appendChild(dropdownselect);
+                        // 下拉列表的a标签
+                        var a = document.createElement("a");
+                        a.className = "btn btn-secondary dropdown-toggle";
+                        a.setAttribute("href",  "JavaScript:void(0)");
+                        a.setAttribute("role", "button");
+                        a.setAttribute("data-toggle","dropdown");
+                        a.setAttribute("aria-expanded", "false");
+                        a.innerText = "点我，选一个问题验证吧！";
+                        dropdownselect.appendChild(a);
+                        // 下拉列表的选项值
+                        var dropdown_menu = document.createElement("div")
+                        dropdown_menu.className = "dropdown-menu";
+                        dropdownselect.appendChild(dropdown_menu);
+                        // 第一个选项
+                        var select1 = document.createElement("a");
+                        select1.className = "dropdown-item";
+                        select1.setAttribute("href", "JavaScript:void(0)");
+                        select1.innerText = unescape("%u6211%u4EEC%u662F%u4EC0%u4E48%u65F6%u5019%u5728%u4E00%u8D77%u7684%u5462%uFF1F");
+                        dropdown_menu.appendChild(select1);
+                        // 第二个选项
+                        var select2 = document.createElement("a");
+                        select2.className = "dropdown-item";
+                        select2.setAttribute("href", "JavaScript:void(0)");
+                        select2.innerText = unescape("%u7B54%u9519%u4E86%uFF1F%u90A3%u4F60%u5C31%u62CD%u4E00%u62CD%u6211%u770B%u770B%u6211%u8BF4%u4E86%u4EC0%u4E48%u5427");
+                        dropdown_menu.appendChild(select2);
+                        // 第三个选项
+                        var select3 = document.createElement("a");
+                        select3.className = "dropdown-item";
+                        select3.setAttribute("href", "JavaScript:void(0)");
+                        select3.innerText = unescape("%u6700%u540E%u4E00%u4E2A%u673A%u4F1A%u54E6%uFF0C%u8BF4%u6211%u662F%u4F60%u7684%u5565%uFF1A");
+                        dropdown_menu.appendChild(select3);
+                        // 第一个选项的相应事件
+                        select1.onclick = function(){
+                            containerdiv.removeChild(dropdownselect);
+                            // 问题列表
+                            var div = document.createElement("div");
+                            div.className = "container";
+                            containerdiv.appendChild(div);
+                            // 生成form标签
+                            var form = document.createElement("form");
+                            form.className = "col-lg-12";
+                            div.appendChild(form);
+                            // 生成子div标签
+                            var divchild = document.createElement("div");
+                            divchild.className = "form-group";
+                            form.appendChild(divchild);
+                            // 生成子label标签
+                            var label = document.createElement("label");
+                            label.setAttribute("for", "formGroupExampleInput");
+                            label.innerText = unescape("%u6211%u4EEC%u662F%u4EC0%u4E48%u65F6%u5019%u5728%u4E00%u8D77%u7684%u5462%uFF1F");
+                            divchild.appendChild(label);
+                            // 生成子input标签
+                            var input = document.createElement("input");
+                            input.setAttribute("type", "text");
+                            input.setAttribute("placeholder", "答错了就会重新刷新页面哦！");
+                            input.setAttribute("id", "formGroupExampleInput");
+                            input.className = "form-control";
+                            divchild.appendChild(input);
+                            // 生成提交表单
+                            var submit = document.createElement("button")
+                            submit.setAttribute("type", "submit");
+                            submit.setAttribute("id", "button");
+                            submit.className = "btn btn-primary";
+                            submit.innerText = "填好啦！";
+                            form.appendChild(submit);
+                            submit.onclick = function(){
+                                var answer1 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022-12-30%u5728%u4E00%u8D77%u7684";
+                                var answer2 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022/12/30%u5728%u4E00%u8D77%u7684";
+                                var answer3 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022%u5E7412%u670830%u5728%u4E00%u8D77%u7684";
+                                var answer4 = "%u60A6%u6B23%u5B9D%u548C%u5FB7%u534E%u5B9D%u662F2022.12.30%u5728%u4E00%u8D77%u7684";
+                                if (input.value == unescape(answer1) | input.value == unescape(answer2) | input.value == unescape(answer3) | input.value == unescape(answer4)){
+                                    window.location.href = "./love.html";
+                                    return false;
+                                }else{
+                                    window.location.reload();
+                                }
                             }
+                            return false;
+                        }
+                        // 第二个选项的相应事件
+                        select2.onclick = function(){
+                            containerdiv.removeChild(dropdownselect);
+                            // 问题列表
+                            var div = document.createElement("div");
+                            div.className = "container";
+                            containerdiv.appendChild(div);
+                            // 生成form标签
+                            var form = document.createElement("form");
+                            form.className = "col-lg-12";
+                            div.appendChild(form);
+                            // 生成子div标签
+                            var divchild = document.createElement("div");
+                            divchild.className = "form-group";
+                            form.appendChild(divchild);
+                            // 生成子label标签
+                            var label = document.createElement("label");
+                            label.setAttribute("for", "formGroupExampleInput");
+                            label.innerText = unescape("%u90A3%u4F60%u5C31%u62CD%u4E00%u62CD%u6211%u770B%u770B%u6211%u8BF4%u4EC0%u4E48%u4E86%u5427");
+                            divchild.appendChild(label);
+                            // 生成子input标签
+                            var input = document.createElement("input");
+                            input.setAttribute("type", "text");
+                            input.setAttribute("placeholder", "答错了就会重新刷新页面哦！");
+                            input.setAttribute("id", "formGroupExampleInput");
+                            input.className = "form-control";
+                            divchild.appendChild(input);
+                            // 生成提交表单
+                            var submit = document.createElement("button")
+                            submit.setAttribute("type", "submit");
+                            submit.setAttribute("id", "button");
+                            submit.className = "btn btn-primary";
+                            submit.innerText = "填好啦！";
+                            form.appendChild(submit);
+                            submit.onclick = function(){
+                                if (input.value == unescape("%u5218%u5FB7%u534E%u662F%u60A6%u6B23%u5B9D%u7684%u5B9D")){
+                                    window.location.href = "./love.html";
+                                    return false;
+                                }else{
+                                    window.location.reload();
+                                }
+                            }
+                            return false;
+                        }
+                        // 第三个选项的相应事件
+                        select3.onclick = function(){
+                            containerdiv.removeChild(dropdownselect);
+                            // 问题列表
+                            var div = document.createElement("div");
+                            div.className = "container";
+                            containerdiv.appendChild(div);
+                            // 生成form标签
+                            var form = document.createElement("form");
+                            form.className = "col-lg-12";
+                            div.appendChild(form);
+                            // 生成子div标签
+                            var divchild = document.createElement("div");
+                            divchild.className = "form-group";
+                            form.appendChild(divchild);
+                            // 生成子label标签
+                            var label = document.createElement("label");
+                            label.setAttribute("for", "formGroupExampleInput");
+                            label.innerText = unescape("%u6700%u540E%u4E00%u4E2A%u673A%u4F1A%u54E6%uFF0C%u8BF4%u6211%u662F%u4F60%u7684%u5565%uFF1A");
+                            divchild.appendChild(label);
+                            // 生成子input标签
+                            var input = document.createElement("input");
+                            input.setAttribute("type", "text");
+                            input.setAttribute("placeholder", "答错了就会重新刷新页面哦！");
+                            input.setAttribute("id", "formGroupExampleInput");
+                            input.className = "form-control";
+                            divchild.appendChild(input);
+                            // 生成提交表单
+                            var submit = document.createElement("button")
+                            submit.setAttribute("type", "submit");
+                            submit.setAttribute("id", "button");
+                            submit.className = "btn btn-primary";
+                            submit.innerText = "填好啦！";
+                            form.appendChild(submit);
+                            submit.onclick = function(){
+                                if (input.value == unescape("%u5927%u5B9D")){
+                                    window.location.href = "./love.html";
+                                    return false;
+                                }else{
+                                    window.location.reload();
+                                }
+                            }
+                            return false;
                         }
                     }
                 }
             })();
     </script>
-    <!-- 问题表单 -->
-    <!-- <div class="container">
-        <form class="col-lg-12">
-            <div class="form-group">
-              <label for="formGroupExampleInput">我们是什么时候在一起的</label>
-              <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input placeholder">
-            </div>
-            <div class="form-group">
-              <label for="formGroupExampleInput2">那你就拍一拍我看看我说了什么吧</label>
-              <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Another input placeholder">
-            </div>
-            <div class="form-group">
-                <label for="formGroupExampleInput3">最后一个机会哦，说我是你的啥</label>
-                <input type="text" class="form-control" id="formGroupExampleInput3" placeholder="Another input placeholder">
-              </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-    </div> -->
 </body>
 </html>
