@@ -148,8 +148,6 @@
 	                var old_date = new Date("2022-12-30 00:00:00"); //设置过去的一个时间点，"yyyy-MM-dd HH:mm:ss"格式化日期
 	                var difftime = (new_date - old_date)/1000; // 秒数
                     var diffday = parseInt(difftime/86400);
-                    console.log(diffday);
-                    console.log(click_count);
                     if (click_count == diffday){
                         // 生成div - container
                         var containerdiv = document.getElementById("alldiv");
