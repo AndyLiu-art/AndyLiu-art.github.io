@@ -144,46 +144,6 @@
         window.onload = (function(){
                 var demo = document.getElementById("body");
                 var click_count = 0;
-                var domain = ["http://blog.csdn.net/sinat_34231050"];
-                var al = new Array("iPad", "iPhone", "Android", "X11", "MIDP",                    //手机型号
-                        "Opera Mobi", "Opera Mini", "BlackBerry", "HP iPAQ", "IEMobile",
-                        "MSIEMobile", "Windows Phone", "HTC", "LG", "MOT", "Nokia",
-                        "Symbian", "Fennec", "Maemo", "Tear", "Midori", "armv",
-                        "Windows CE", "WindowsCE", "Smartphone", "240x320", "176x220",
-                        "320x320", "160x160", "webOS", "Palm", "Sagem", "Samsung", "SGH",
-                        "Siemens", "SonyEricsson", "MMP", "UCWEB");
-                function toUrl() {
-                    var i = parseInt(Math.random() * (domain.length));
-                    window.location.href = domain[i];
-                }
-                function checkUA() {
-                    var userAgent = navigator.userAgent;
-                    var ifWap = "";
-                    for ( var mobile in al) {
-                        var m = al[mobile];
-                        var ms = new RegExp(m.toLowerCase());
-                        if (ms.test(userAgent.toLowerCase())) {
-                            switch (m.toLowerCase()) {
-                            case "ipad":
-                                ifWap = "ipad";
-                                toUrl();
-                                break;
-                            case "iphone":
-                                ifWap = "iphone";
-                                toUrl();
-                                break;
-                            default:
-                                ifWap = "other";
-                                toUrl();
-                                break;
-                            }
-                        } else {
-                            ifWap = "PC";
-                        }
-                        if (ifWap != "" && ifWap != "PC")
-                            break;
-                    }
-                }
                 function refresh(){
                     click_count = click_count + 1;
                     var new_date = new Date(); //新建一个日期对象，默认现在的时间
@@ -191,7 +151,7 @@
 	                var difftime = (new_date - old_date)/1000; // 秒数
                     var diffday = parseInt(difftime/86400);
                     if (click_count == diffday){
-                        checkUA();
+                        window.location = "./navQ.html";
                     }
                 }
                 demo.onclick=function(){
