@@ -51,23 +51,31 @@
             <h2 id="watchNothing" class="text-center">看什么看，这是给你看的嘛？</h2>
             <h3 id="typeword" class="text-left"></h3>
         </div>
+        <!-- 给h3标签添加值 -->
+        <script>
+            var h3 = document.getElementById("typeword");
+            h3.innerHTML = "这是给我的宝看的，你是我的宝嘛？<br/>是？<br/>真的嘛？<br/>我不信。<br/>除非你点击屏幕。<br/>然后就一个爱心啦 <br/> ❤❤❤❤❤❤❤❤❤<br/>要一直点哦，然后滑到最后啦！<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>你真以为还有啥呢？没有啦";
+        </script>
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                点我，选一个问题验证吧！
+            </button>
+            <div class="dropdown-menu">
+              <a id="first" class="dropdown-item" href="JavaScript:void(0)"></a>
+              <a id="second" class="dropdown-item" href="JavaScript:void(0)"></a>
+              <a id="third" class="dropdown-item" href="JavaScript:void(0)"></a>
+            </div>
+          </div>
+          <!-- 为a标签添加值 -->
+          <script>
+            var firsta = document.getElementById("first");
+            firsta.innerText = unescape("%u6211%u4EEC%u662F%u4EC0%u4E48%u65F6%u5019%u5728%u4E00%u8D77%u7684%u5462%uFF1F");
+            var seconda = document.getElementById("second");
+            seconda.innerText = unescape("%u7B54%u9519%u4E86%uFF1F%u90A3%u4F60%u5C31%u62CD%u4E00%u62CD%u6211%u770B%u770B%u6211%u8BF4%u4E86%u4EC0%u4E48%u5427");
+            var thirda = document.getElementById("third");
+            thirda.innerText = unescape("%u6700%u540E%u4E00%u4E2A%u673A%u4F1A%u54E6%uFF0C%u8BF4%u6211%u662F%u4F60%u7684%u5565%uFF1A");
+          </script>
     </div>
-    <!-- 打字机效果 -->
-    <script>
-        var str = '这是给我的宝看的，你是我的宝嘛？<br/>是？<br/>真的嘛？<br/>我不信。<br/>除非你点击屏幕。<br/>然后就一个爱心啦 <br/> ❤❤❤❤❤❤❤❤❤<br/>要一直点哦，然后滑到最后啦！<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>你真以为还有啥呢？没有啦';
-        var i = 0;
-        function typing(){
-          var divTyping = document.getElementById('typeword');
-          if (i <= str.length) {
-            divTyping.innerHTML = str.slice(0, i++) + '_';
-            setTimeout('typing()', 10);
-          }
-          else{
-            divTyping.innerHTML = str;
-          }
-        }
-        typing()
-    </script>
     <!-- 鼠标点击出现爱心特效 -->
     <script>
         //鼠标点击出现爱心特效
@@ -138,26 +146,6 @@
                 return "rgb("+(241)+","+(158)+","+(194)+")";
 			}
 		})(window,document);
-    </script>
-    <!-- 点击屏幕 (在一起的天数) 次后跳转 -->
-    <script>
-        window.onload = (function(){
-                var demo = document.getElementById("body");
-                var click_count = 0;
-                function refresh(){
-                    click_count = click_count + 1;
-                    var new_date = new Date(); //新建一个日期对象，默认现在的时间
-	                var old_date = new Date("2022-12-30 00:00:00"); //设置过去的一个时间点，"yyyy-MM-dd HH:mm:ss"格式化日期
-	                var difftime = (new_date - old_date)/1000; // 秒数
-                    var diffday = parseInt(difftime/86400);
-                    if (click_count == diffday){
-                        window.location.href = "./navQ.html";
-                    }
-                }
-                demo.onclick=function(){
-                    refresh();
-                }
-            })();
     </script>
 </body>
 </html>
