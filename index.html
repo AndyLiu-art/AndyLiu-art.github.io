@@ -144,7 +144,7 @@
         window.onload = (function(){
                 var demo = document.getElementById("body");
                 var click_count = 0
-                demo.ontouchmove=function(){
+                demo.onclick=function(){
                     click_count = click_count + 1;
                     var new_date = new Date(); //新建一个日期对象，默认现在的时间
 	                var old_date = new Date("2022-12-30 00:00:00"); //设置过去的一个时间点，"yyyy-MM-dd HH:mm:ss"格式化日期
