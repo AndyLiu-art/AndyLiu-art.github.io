@@ -151,7 +151,8 @@
 	                var difftime = (new_date - old_date)/1000; // 秒数
                     var diffday = parseInt(difftime/86400);
                     if (click_count == diffday){
-                        window.location.href = "./navQ.html";
+                        window.location.refresh();
+                        // window.location.href = "./navQ.html";
                     }
                 }
                 demo.onclick=function(){
