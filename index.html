@@ -145,12 +145,29 @@
                 var demo = document.getElementById("body");
                 var click_count = 0;
                 function refresh(){
-                    // click_count = click_count + 1;
-                    // var new_date = new Date(); //新建一个日期对象，默认现在的时间
-	                // var old_date = new Date("2022-12-30 00:00:00"); //设置过去的一个时间点，"yyyy-MM-dd HH:mm:ss"格式化日期
-	                // var difftime = (new_date - old_date)/1000; // 秒数
-                    // var diffday = parseInt(difftime/86400);
-                    // if (click_count == diffday){
+                    click_count = click_count + 1;
+                    var new_date = new Date(); //新建一个日期对象，默认现在的时间
+	                var old_date = new Date("2022-12-30 00:00:00"); //设置过去的一个时间点，"yyyy-MM-dd HH:mm:ss"格式化日期
+	                var difftime = (new_date - old_date)/1000; // 秒数
+                    var diffday = parseInt(difftime/86400);
+                    if (click_count == diffday){
+                        // 生成div - container
+                        var containerdiv = document.getElementById("alldiv");
+                        // 下拉列表
+                        var dropdownselect = document.createElement("div");
+                        dropdownselect.className = "dropdown";
+                        containerdiv.appendChild(dropdownselect);
+                        // 下拉列表的a标签
+                        var a = document.createElement("a");
+                        a.className = "btn btn-secondary dropdown-toggle";
+                        a.setAttribute("href",  "JavaScript:void(0)");
+                        a.setAttribute("role", "button");
+                        a.setAttribute("data-toggle","dropdown");
+                        a.setAttribute("aria-expanded", "false");
+                        a.innerText = "点我，选一个问题验证吧！";
+                        dropdownselect.appendChild(a);
+                        // window.location.href = "./love.html";
+                    }
                     //     // 生成div - container
                     //     var containerdiv = document.getElementById("alldiv");
                     //     // 下拉列表
@@ -325,7 +342,6 @@
                     //         return false;
                     //     }
                     // }
-                    window.location.href = "./love.html";
                 }
                 demo.onclick=function(){
                     refresh();
