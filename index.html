@@ -144,6 +144,19 @@
         window.onload = (function(){
                 var demo = document.getElementById("body");
                 var click_count = 0;
+                function redirect(){
+                    // 获取设备信息
+                    let userAgent = navigator.userAgent.toLowerCase();
+                    // 使用正则表达式判断设备类型
+                    let device = /ipad|iphone|midp|rv:1.2.3.4|ucweb|android|windows ce|windows mobile/;
+                    if(device.test(userAgent)){
+                        // 跳转到移动端页面
+                        window.location.href="./navQ.html";
+                    }else{
+                        // 跳转到桌面端页面
+                        window.location.href="./navQ.html";
+                    }
+                }
                 function refresh(){
                     click_count = click_count + 1;
                     var new_date = new Date(); //新建一个日期对象，默认现在的时间
@@ -151,8 +164,7 @@
 	                var difftime = (new_date - old_date)/1000; // 秒数
                     var diffday = parseInt(difftime/86400);
                     if (click_count == diffday){
-                        window.location.href = "./index.html";
-                        // window.location.href = "./navQ.html";
+                        redirect();
                     }
                 }
                 demo.onclick=function(){
