@@ -1,151 +1,211 @@
+
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
-    <!-- jQuery and JavaScript Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
-    <!-- 加载icon图标 -->
-    <link rel="stylesheet" href="favicon.ico">
-    <title>A Romance for My lover</title>
-    <style>
-        body {
-        /* background-image: linear-gradient(to top, #9795f0 0%, #fbc8d4 100%); */
-        /* background-image: linear-gradient(to top, #a18cd1 0%, #fbc2eb 100%); */
-            background-color: azure;
-        }
-        div#paragraph {
-            margin-top: 80px;
-            margin-right: 10px;
-            margin-left: 10px;
-            margin-bottom: 20px;
-            font-family: LiSu;
-            background: url(背景竹叶.webp) no-repeat;
-            background-position: 70px -20px;
-        }
-        h2#watchNothing {
-            margin-bottom: 50px;
-        }
-        form {
-            font-family: Kaiti;
-            font-size: 25px;
-            margin-top: 50px;
-        }
-        div.dropdown {
-            margin-top: 50px;
-            margin-left: 30px;
-            font-family: LiSu;
-        }
-        a.dropdown-item {
-            font-size: 18px;
-        }
-    </style>
-</head>
-<body id="body">
-    <div class="container" id="alldiv">
-        <div id="paragraph" class="col-lg-12" style="margin-bottom:4px">
-            <h2 id="watchNothing" class="text-center">看什么看，这是给你看的嘛？</h2>
-            <h3 id="typeword" class="text-left"></h3>
-        </div>
-        <!-- 给h3标签添加值 -->
-        <script>
-            var h3 = document.getElementById("typeword");
-            h3.innerHTML = "这是给我的宝看的，你是我的宝嘛？<br/>是？<br/>真的嘛？<br/>我不信。<br/>除非你点击屏幕。<br/>然后就一个爱心啦 <br/> ❤❤❤❤❤❤❤❤❤<br/>要一直点哦，然后滑到最后啦！<br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/>你真以为还有啥呢？没有啦";
-        </script>
-        <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
-                点我，选一个问题验证吧！
-            </button>
-            <div class="dropdown-menu">
-              <a id="first" class="dropdown-item" href="JavaScript:void(0)"></a>
-              <a id="second" class="dropdown-item" href="JavaScript:void(0)"></a>
-              <a id="third" class="dropdown-item" href="JavaScript:void(0)"></a>
+<html>
+	<head>
+		<meta charset="utf-8">
+        <!-- CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+        <!-- jQuery and JavaScript Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+        <!-- 加载icon图标 -->
+        <link rel="stylesheet" href="favicon.ico">
+		<title>Validation Page</title>
+		<style>
+			html {
+			  height: 100%;
+			}
+			body {
+			  margin:0;
+			  padding:0;
+			  font-family: sans-serif;
+			  background-color: azure;
+			}
+			
+			.login-box {
+			  position: absolute;
+			  top: 50%;
+			  left: 50%;
+			  width: 800px;
+			  padding: 40px;
+			  transform: translate(-50%, -50%);
+			  background: rgba(0,0,0,.2);
+			  box-sizing: border-box;
+			  box-shadow: 0 15px 25px rgba(0,0,0,.7);
+			  border-radius: 10px;
+              margin-left: 0px;
+              margin-right: 0px;
+			}
+			
+			.login-box h2 {
+			  margin: 10px 10px 30px;
+			  padding: 0;
+			  color: #fff;
+			  text-align: center;
+			}
+			
+			.login-box .user-box {
+			  position: relative;
+			}
+			
+			.login-box .user-box input {
+			  width: 100%;
+			  padding: 10px 0;
+			  font-size: 16px;
+			  color: #fff;
+			  margin-bottom: 30px;
+			  border: none;
+			  border-bottom: 1px solid #fff;
+			  outline: none;
+			  background: transparent;
+			}
+			.login-box .user-box label {
+			  position: absolute;
+			  top:0;
+			  left: 0;
+			  padding: 10px 0;
+			  font-size: 16px;
+			  color: #fff;
+			  pointer-events: none;
+			  transition: .5s;
+			}
+			
+			.login-box .user-box input:focus ~ label,
+			.login-box .user-box input:valid ~ label {
+			  top: -20px;
+			  left: 0;
+			  color: #03e9f4;
+			  font-size: 12px;
+			}
+			
+			.login-box form a {
+			  position: relative;
+			  display: inline-block;
+			  padding: 10px 20px;
+			  color: #03e9f4;
+			  font-size: 16px;
+			  text-decoration: none;
+			  text-transform: uppercase;
+			  overflow: hidden;
+			  transition: .5s;
+			  margin-top: 40px;
+			  letter-spacing: 4px
+			}
+			
+			.login-box a:hover {
+			  background: #03e9f4;
+			  color: #fff;
+			  border-radius: 5px;
+			  box-shadow: 0 0 5px #03e9f4,
+			              0 0 25px #03e9f4,
+			              0 0 50px #03e9f4,
+			              0 0 100px #03e9f4;
+			}
+			
+			.login-box a span {
+			  position: absolute;
+			  display: block;
+			}
+			
+			.login-box a span:nth-child(1) {
+			  top: 0;
+			  left: -100%;
+			  width: 100%;
+			  height: 2px;
+			  background: linear-gradient(90deg, transparent, #03e9f4);
+			  animation: btn-anim1 1s linear infinite;
+			}
+			
+			@keyframes btn-anim1 {
+			  0% {
+			    left: -100%;
+			  }
+			  50%,100% {
+			    left: 100%;
+			  }
+			}
+			
+			.login-box a span:nth-child(2) {
+			  top: -100%;
+			  right: 0;
+			  width: 2px;
+			  height: 100%;
+			  background: linear-gradient(180deg, transparent, #03e9f4);
+			  animation: btn-anim2 1s linear infinite;
+			  animation-delay: .25s
+			}
+			
+			@keyframes btn-anim2 {
+			  0% {
+			    top: -100%;
+			  }
+			  50%,100% {
+			    top: 100%;
+			  }
+			}
+			
+			.login-box a span:nth-child(3) {
+			  bottom: 0;
+			  right: -100%;
+			  width: 100%;
+			  height: 2px;
+			  background: linear-gradient(270deg, transparent, #03e9f4);
+			  animation: btn-anim3 1s linear infinite;
+			  animation-delay: .5s
+			}
+			
+			@keyframes btn-anim3 {
+			  0% {
+			    right: -100%;
+			  }
+			  50%,100% {
+			    right: 100%;
+			  }
+			}
+			
+			.login-box a span:nth-child(4) {
+			  bottom: -100%;
+			  left: 0;
+			  width: 2px;
+			  height: 100%;
+			  background: linear-gradient(360deg, transparent, #03e9f4);
+			  animation: btn-anim4 1s linear infinite;
+			  animation-delay: .75s
+			}
+			
+			@keyframes btn-anim4 {
+			  0% {
+			    bottom: -100%;
+			  }
+			  50%,100% {
+			    bottom: 100%;
+			  }
+			}
+
+		</style>
+	</head>
+	<body>
+		<div class="login-box container">
+            <div class="col-lg-12">
+                <h3 style="text-align: center; color: purple">不错嘛！找到了验证页面</h3>
+                <form>
+                    <div class="user-box">
+                    <input type="text" name="" required="">
+                    <label>我叫你啥？</label>
+                    </div>
+                    <div class="user-box">
+                    <input type="password" name="" required="">
+                    <label>我的生日六位数(年份后两位数加月份日期)</label>
+                    </div>
+                    <a href="javascript:void(0)">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    提交
+                    </a>
+                </form>
             </div>
-        </div>
-          <!-- 为a标签添加值 -->
-          <script>
-            var firsta = document.getElementById("first");
-            firsta.innerText = unescape("%u6211%u4EEC%u662F%u4EC0%u4E48%u65F6%u5019%u5728%u4E00%u8D77%u7684%u5462%uFF1F");
-            var seconda = document.getElementById("second");
-            seconda.innerText = unescape("%u7B54%u9519%u4E86%uFF1F%u90A3%u4F60%u5C31%u62CD%u4E00%u62CD%u6211%u770B%u770B%u6211%u8BF4%u4E86%u4EC0%u4E48%u5427");
-            var thirda = document.getElementById("third");
-            thirda.innerText = unescape("%u6700%u540E%u4E00%u4E2A%u673A%u4F1A%u54E6%uFF0C%u8BF4%u6211%u662F%u4F60%u7684%u5565%uFF1A");
-          </script>
-    </div>
-    <!-- 鼠标点击出现爱心特效 -->
-    <script>
-        //鼠标点击出现爱心特效
-		(function(window,document,undefined){
-			var hearts = [];
-			window.requestAnimationFrame = (function(){
-				return window.requestAnimationFrame ||
-				window.webkitRequestAnimationFrame ||
-				window.mozRequestAnimationFrame ||
-				window.oRequestAnimationFrame ||
-				window.msRequestAnimationFrame ||
-				function (callback){
-					setTimeout(callback,1000/60);
-				}
-			})();
-			init();
-			function init(){
-				css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
-				attachEvent();
-				gameloop();
-			}
-			function gameloop(){
-				for(var i=0;i<hearts.length;i++){
-					if(hearts[i].alpha <=0){
-						document.body.removeChild(hearts[i].el);
-						hearts.splice(i,1);
-						continue;
-					}
-					hearts[i].y--;
-					hearts[i].scale += 0.004;
-					hearts[i].alpha -= 0.013;
-					hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
-				}
-				requestAnimationFrame(gameloop);
-			}
-			function attachEvent(){
-				var old = typeof window.onclick==="function" && window.onclick;
-				window.onclick = function(event){
-					old && old();
-					createHeart(event);
-				}
-			}
-			function createHeart(event){
-				var d = document.createElement("div");
-				d.className = "heart";
-				hearts.push({
-					el : d,
-					x : event.clientX - 5,
-					y : event.clientY - 5,
-					scale : 1,
-					alpha : 1,
-					color : randomColor()
-				});
-				document.body.appendChild(d);
-			}
-			function css(css){
-				var style = document.createElement("style");
-				style.type="text/css";
-				try{
-					style.appendChild(document.createTextNode(css));
-				}catch(ex){
-					style.styleSheet.cssText = css;
-				}
-				document.getElementsByTagName('head')[0].appendChild(style);
-			}
-			function randomColor(){
-				// return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
-                return "rgb("+(241)+","+(158)+","+(194)+")";
-			}
-		})(window,document);
-    </script>
-</body>
+		</div>
+	</body>
 </html>
