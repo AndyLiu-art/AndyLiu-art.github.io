@@ -190,14 +190,14 @@
                 <h3 style="text-align: center; color: purple">不错嘛！找到了验证页面</h3>
                 <form>
                     <div class="user-box">
-                    <input type="text" name="" required="">
-                    <label>我叫你啥？</label>
+                    <input type="text" name="" required="" id="username">
+                    <label id="usernamelabel">我叫你啥？</label>
                     </div>
                     <div class="user-box">
-                    <input type="password" name="" required="">
-                    <label>我的生日六位数(年份后两位数加月份日期)</label>
+                    <input type="password" name="" required="" id="password">
+                    <label id="passwordlabel">我的生日六位数(年份后两位数加月份日期)</label>
                     </div>
-                    <a href="javascript:void(0)">
+                    <a href="javascript:void(0)" id="submit">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -207,5 +207,20 @@
                 </form>
             </div>
 		</div>
+        <script>
+            var a = document.getElementById("submit");
+            var password = document.getElementById("password");
+            var username = document.getElementById("username");
+            var usernamelabel = document.getElementById("usernamelabel");
+            var passwordlabel = document.getElementById("passwordlabel");
+            a.onclick = function(){
+                if (password.value == "000317" & username.value == unescape("%u60A6%u6B23%u5B9D")){
+                    window.location.href = "./loveday.html";
+                }else{
+                    passwordlabel.innerText = "密码或者用户名错误";
+                    usernamelabel.innerText = "密码或者用户名错误";
+                }
+            }
+        </script>
 	</body>
 </html>
