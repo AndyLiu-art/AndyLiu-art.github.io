@@ -139,18 +139,18 @@
     </script>
     <!-- 点击屏幕 (在一起的天数) 次后跳转 -->
     <script>
+        // 获取对象
         var demo = document.getElementById("body");
         var timer = null;
         var waitTime = 2000; // 该时间间隔内点击才算连续点击（单位：ms）
         var lastTime = new Date().getTime(); // 上次点击时间
         var count = 0; // 连续点击次数
-        // 计算满足连击次数
-        var new_date = new Date(); //新建一个日期对象，默认现在的时间
-        var old_date = new Date("2022-12-30 00:00:00"); //设置过去的一个时间点，"yyyy-MM-dd HH:mm:ss"格式化日期
-        var difftime = (new_date - old_date)/1000; // 秒数
-        var diffday = parseInt(difftime/86400);
-        // 获取对象
         demo.onclick = function(event) {
+            // 计算满足连击次数
+            var new_date = new Date(); //新建一个日期对象，默认现在的时间
+            var old_date = new Date("2022-12-30 00:00:00"); //设置过去的一个时间点，"yyyy-MM-dd HH:mm:ss"格式化日期
+            var difftime = (new_date - old_date)/1000; // 秒数
+            var diffday = parseInt(difftime/86400);
             var currentTime = new Date().getTime();
             // 计算两次相连的点击时间间隔
             count = (currentTime-lastTime) < waitTime ? count + 1 : 1;
