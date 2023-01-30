@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!-- jQuery and JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+    <!-- 加载icon图标 -->
+    <link rel="stylesheet" href="favicon.ico">
     <style>
         body,html {
             background: #FFE3EC;
@@ -278,7 +285,7 @@
 </head>
 <body>
     <div class="wrapper">
-        <h2>悦欣，我可以做你的男朋友吗?</h2>
+        <h2 id="h2">悦欣，我可以做你的男朋友吗?</h2>
         <div class="pikachu">
             <div class="head">
                 <div class="ears left brown"><div class="ears-inside yellow"></div></div>
@@ -300,6 +307,21 @@
             <div class="leg right yellow-dark"></div>
             <div class="tail yellow-dark"></div>
         </div>
+        <div class="container col-lg-12">
+            <button type="button" class="btn btn-success" id="jiehun">可以</button>
+            <button type="button" class="btn btn-danger" id="laogong">不可以</button>
+        </div>
+        <script>
+            var ky = document.getElementById("jiehun");
+            ky.onclick = function(){
+                window.location.href = "./marry.html";
+            }
+            var bky = document.getElementById("laogong");
+            bky.onclick = function(){
+                var h2 = document.getElementById("h2");
+                h2.innerText = "那我就是你老公啦，老婆大人！";
+            }
+        </script>
         <!-- 继续制作搞笑的选项 -->
     </div>
 </body>
