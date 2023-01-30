@@ -184,14 +184,23 @@
 
 		</style>
 	</head>
-	<body>
+	<body id="body">
+		<script>
+			if (document.referrer == "index.html") {
+				;
+			}else {
+				var body = document.getElementById("body");
+				body.innerHTML = "";
+				body.style.backgroundColor = "black";
+			}
+		</script>
 		<div class="login-box container">
             <div class="col-lg-12">
                 <h3 style="text-align: center; color: purple">不错嘛！找到了验证页面</h3>
                 <form>
                     <div class="user-box">
                     <input type="text" name="" required="" id="username">
-                    <label id="usernamelabel">我叫你啥？</label>
+                    <label id="usernamelabel">我给你备注叫啥？</label>
                     </div>
                     <div class="user-box">
                     <input type="password" name="" required="" id="password">
