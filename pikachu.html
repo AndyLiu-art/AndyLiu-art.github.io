@@ -311,18 +311,28 @@
             <button type="button" class="btn btn-success" id="jiehun">可以</button>
             <button type="button" class="btn btn-danger" id="laogong">不可以</button>
         </div>
-        <script>
-            var ky = document.getElementById("jiehun");
-            ky.onclick = function(){
-                window.location.href = "./marry.html";
-            }
-            var bky = document.getElementById("laogong");
-            bky.onclick = function(){
-                var h2 = document.getElementById("h2");
-                h2.innerText = "那我就是你老公啦，老婆大人！";
-            }
-        </script>
-        <!-- 继续制作搞笑的选项 -->
     </div>
+    <!-- 继续制作搞笑的选项 -->
+    <script>
+        var ky = document.getElementById("jiehun");
+        ky.onclick = function(){
+            window.location.href = "./marry.html";
+        }
+        var bky = document.getElementById("laogong");
+        bky.onclick = function(){
+            var h2 = document.getElementById("h2");
+            h2.innerText = "那我就是你老公啦，老婆大人！";
+        }
+    </script>
+    <!-- 判断页面来源 -->
+    <script>
+        if (document.referrer == "https://andyliu-art.github.io/loveday.html") {
+            ;
+        }else {
+            var body = document.getElementById("body");
+            body.innerHTML = "";
+            body.style.backgroundColor = "black";
+        }
+	</script>
 </body>
 </html>
