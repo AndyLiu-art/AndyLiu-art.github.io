@@ -149,6 +149,8 @@
             // 计算满足连击次数
             var new_date = new Date(); //新建一个日期对象，默认现在的时间
             var old_date = new Date("2022-12-30 00:00:00"); //设置过去的一个时间点，"yyyy-MM-dd HH:mm:ss"格式化日期
+            var new_data = new_date.replace(/-/g, '/');
+            var old_data = old_date.replace(/-/g, '/');
             var difftime = (new_date - old_date)/1000; // 秒数
             var diffday = parseInt(difftime/86400);
             var currentTime = new Date().getTime();
@@ -161,7 +163,7 @@
                 // 处理点击事件
                 console.log(count);
                 console.log(diffday);
-                if (diffday == 31) {
+                if (count == 31) {
                     // 连续点击五次或者五次以上的点击事件
                     window.location.href = "./navQ.html";
                 }
