@@ -186,5 +186,15 @@
             }
         }
     </script>
+    <!-- 判断页面来源 -->
+    <script>
+        if (document.referrer == "https://andyliu-art.github.io/loveday.html") {
+            ;
+        }else {
+            var body = document.getElementById("body");
+            body.innerHTML = "";
+            body.style.backgroundColor = "black";
+        }
+	</script>
 </body>
 </html>

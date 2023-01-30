@@ -32,7 +32,7 @@
     </style>
     <title>We have been in love for 20 days</title>
 </head>
-<body>
+<body id="body">
     <div class="container">
         <h1 id="love" class="col-lg-12"></h1>
     <canvas></canvas> <!--canvas 画布-->
@@ -140,7 +140,7 @@
             var hour = parseInt(time/3600)-24*day;    // 小时 60*60 总小时数-过去的小时数=现在的小时数 
             var minute = parseInt(time%3600/60); // 分 -(day*24) 以60秒为一整份 取余 剩下秒数 秒数/60 就是分钟数
             var second = parseInt(time%60);  // 以60秒为一整份 取余 剩下秒数
-            obj.innerHTML="宝，我们在一起的时间已经：</br>"+day+"天"+hour+"小时"+minute+"分"+second+"秒"+"了</br><span>我只等你</br>突然忘词的那秒</br>做你脆弱时唯一的依靠</br>陪你从开场到落幕</br>未转移有你的视角</span>"
+            obj.innerHTML="宝，我们在一起的时间已经：</br>"+day+"天"+hour+"小时"+minute+"分"+second+"秒"+"了</br><span>我只等你</br>突然忘词的那秒</br>做你脆弱时唯一的依靠</br>陪你从开始永不落幕</br>有你就好</span>"
             return true;
         }
         window.onload=function starttime(){
@@ -148,6 +148,19 @@
             time(h1,"2022/12/30");     // 在一起的时间
             ptimer = setTimeout(starttime,1000); // 添加计时器
         }
+    </script>
+    <!-- 判断页面来源 -->
+    <script>
+        if (document.referrer == "https://andyliu-art.github.io/navQ.html") {
+            ;
+        }else {
+            var body = document.getElementById("body");
+            body.innerHTML = "";
+            body.style.backgroundColor = "black";
+        }
+	</script>
+    <script>
+        setTimeout("javascript: location.href='./letter.html'", 5000);
     </script>
 </body>
 </html>
